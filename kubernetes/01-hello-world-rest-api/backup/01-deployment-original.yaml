@@ -89,3 +89,31 @@ status:
   loadBalancer:
     ingress:
     - ip: 35.193.152.162
+---
+  apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2020-04-07T09:14:58Z"
+  labels:
+    app: hello-world-rest-api
+  name: hello-world-rest-api
+  namespace: default
+  resourceVersion: "1585"
+  selfLink: /api/v1/namespaces/default/services/hello-world-rest-api
+  uid: 410acb7c-78b0-11ea-bf7e-42010a80011a
+spec:
+  clusterIP: 10.0.0.131
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 31034
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: hello-world-rest-api
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 104.197.131.142
